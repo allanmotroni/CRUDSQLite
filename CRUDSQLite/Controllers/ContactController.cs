@@ -1,11 +1,9 @@
 ﻿using CRUDSQLite.Contexts;
 using CRUDSQLite.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CRUDSQLite.Controllers
@@ -27,8 +25,8 @@ namespace CRUDSQLite.Controllers
         }
 
         [HttpGet]
-        [Route("{contactId:int}")]
-        public async Task<Contact> GetById(int contactId)
+        [Route("{contactId:guid}")]
+        public async Task<Contact> GetById(Guid contactId)
         {
             Contact contact = null;
             using (ContactContext context = new ContactContext())

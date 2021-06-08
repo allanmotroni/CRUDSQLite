@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CRUDSQLite.Models
+﻿namespace CRUDSQLite.Models
 {
-    public class Contact
+    public class Contact : Base
     {
-        public int Id { get; set; }
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id} - Name: {Name}";
+        }
     }
 }
